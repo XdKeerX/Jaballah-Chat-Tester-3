@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <h1>Firebase Chat & Call</h1>
+        <div>
+            <span id="user-email"></span>
+            <button id="logout-btn">Logout</button>
+        </div>
+    </div>
+
+    <div id="main-container">
+        <!-- Video Call Section -->
+        <div class="video-section">
+            <h2>Video Call</h2>
+            <div class="videos">
+                <div class="video-wrapper">
+                    <p>Your Video</p>
+                    <video id="localVideo" muted autoplay playsinline></video>
+                </div>
+                <div class="video-wrapper">
+                    <p>Remote Video</p>
+                    <video id="remoteVideo" autoplay playsinline></video>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="createCallBtn">Create Call & Copy ID</button>
+                <input id="callIdInput" placeholder="Paste Call ID to join" />
+                <button id="joinCallBtn">Join Call</button>
+                <button id="hangupBtn" disabled>Hang Up</button>
+            </div>
+            <div id="currentCallId" class="call-id-display"></div>
+        </div>
+
+        <!-- Chat Section -->
+        <div class="chat-section">
+            <h2>Real-Time Chat</h2>
+            <div id="chat-window">
+                <ul id="messages"></ul>
+            </div>
+            <form id="message-form">
+                <input id="message-input" type="text" placeholder="Type a message..." autocomplete="off" required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
